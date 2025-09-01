@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to the Prince of Kingdom</title> 
+  <!-- Font Awesome for social icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #111;
+      color: #f4f4f4;
+      overflow-x: hidden;
+    }
+    header {
+      position: relative;
+      background: url("PRAKASH25.jpg") no-repeat center center/cover;
+      background-attachment: fixed; /* Parallax effect */
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+    }
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 1;
+    }
+    header img, header h1 {
+      position: relative;
+      z-index: 2;
+    }
+    /* Crown Logo */
+    .crown {
+      width: 120px;
+      margin-bottom: 15px;
+      animation: float 3s ease-in-out infinite;
+      filter: drop-shadow(0 0 20px gold) drop-shadow(0 0 40px orange);
+    }
+    header h1 {
+      font-size: 3rem;
+      text-shadow: 0 0 10px gold, 0 0 20px gold, 0 0 40px orange;
+      animation: fadeIn 2s ease-in-out;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      background: rgba(255,255,255,0.05);
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 4px 25px rgba(255,215,0,0.3);
+      display: none; /* Hidden until login */
+    }
+    main img {
+      width: 100%;
+      border-radius: 15px;
+      margin-top: 20px;
+      animation: glow 4s infinite alternate;
+    }
+    @keyframes glow {
+      from { box-shadow: 0 0 15px gold; }
+      to { box-shadow: 0 0 35px orange; }
+    }
+    p {
+      line-height: 1.6;
+      font-size: 1.1rem;
+    }
+    .contact {
+      margin-top: 20px;
+      background: rgba(255,255,255,0.1);
+      padding: 15px;
+      border-radius: 10px;
+    }
+    .login {
+      max-width: 400px;
+      margin: 50px auto;
+      padding: 20px;
+      background: rgba(0,0,0,0.3);
+      border-radius: 10px;
+      text-align: center;
+    }
+    .login input {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+    .login button {
+      background: gold;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      color: #111;
+      transition: 0.3s;
+    }
+    .login button:hover {
+      background: orange;
+    }
+    .login-message {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    .social {
+      margin-top: 30px;
+      text-align: center;
+    }
+    .social a {
+      color: gold;
+      margin: 0 15px;
+      font-size: 2rem;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .social a:hover {
+      color: orange;
+      transform: scale(1.2);
+    }
+    footer {
+      background: #000;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: #aaa;
+      display: none; /* Hidden until login */
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <!-- Crown Logo -->
+    <img src="PRAKASH29.jpg" alt="Crown" class="crown">
+    <h1>Welcome to the Prince of Kingdom</h1>
+  </header>
+
+  <!-- Login Form -->
+  <div class="login" id="login-box">
+    <h2>Login</h2>
+    <input type="text" id="username" placeholder="Enter Username">
+    <input type="password" id="password" placeholder="Enter Password">
+    <button onclick="login()">Login</button>
+    <div class="login-message" id="login-message"></div>
+  </div>
+
+  <!-- Hidden Content -->
+  <main id="main-content">
+    <p>Born in March 1992 in Bhavnagar, a small village. Childhood was a dark time, but he built his own kingdom—no rules, no regulations. Trust yourself, believe in yourself, and create your own path!</p>
+    <img src="PRAKASH29.jpg" alt="PRAKASH29">
+    <div class="contact">
+      <p><strong>Contact:</strong> 8140610630</p>
+      <p><strong>History:</strong> Created by own</p>
+      <p><strong>Email:</strong> ppkprakash1990@gmail.com</p>
+    </div>
+    <div class="social">
+      <h3>Follow Me:</h3>
+      <a href="https://www.facebook.com/share/1FLjyoocWD/" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.instagram.com/princeof_parmar1992?igsh=MXF2MXFkd2kxeDdyaA==" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+  </main>
+
+  <footer id="footer">
+    &copy; 2025 Prince of Kingdom | All Rights Reserved
+  </footer>
+
+  <script>
+    function login() {
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+      const message = document.getElementById("login-message");
+
+      const correctUsername = "prince";
+      const correctPassword = "kingdom123";
+
+      if (username === correctUsername && password === correctPassword) {
+        message.style.color = "lime";
+        message.textContent = "✅ Login successful!";
+        
+        document.getElementById("login-box").style.display = "none";
+        document.getElementById("main-content").style.display = "block";
+        document.getElementById("footer").style.display = "block";
+      } else {
+        message.style.color = "red";
+        message.textContent = "❌ Incorrect username or password!";
+      }
+    }
+  </script>
+</body>
+</html>
